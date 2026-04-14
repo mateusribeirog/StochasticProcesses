@@ -6,11 +6,11 @@
 #let assignment = "Trabalho Cadeias de Markov"
 #let author = "Mateus Ribeiro"
 // To use a logo, add an image to this folder and replace none:
-// #let logo = image("your-logo.png", height: 25pt)
-#let logo = none
-#let instructor = "Prof. Charles"
+// #let logo = image("ufc.png", height: 30pt)
+ #let logo = none
+#let instructor = "Prof. Charles Casimiro"
 //#let semester = "Fall 2025"
-#let due-time = "Apr 15 2026"
+#let due-time = "Apr 14 2026"
 
 #show: homework.with(
   class: class,
@@ -70,7 +70,7 @@ sua representação gráfica é dada por:
 #q(title: "Questão 2")[
     Faça um código, em qualquer linguagem da sua escolha, que faça as seguintes
   avaliações sobre o processo modelado pela cadeia de Markov descrito,
-  assumindo a ordem dos estados como E, R, L, A
+  assumindo a ordem dos estados como E,R,L,A.
   + Mostre o valor da matriz de transição de $n$ passos, $P(n)$, para $n = 1, 2, 5, 10, 20, 50, 100$.
 
   + Mostre que a matriz de probabilidades de transição aponta para convergência ao longo das iterações.
@@ -90,7 +90,8 @@ sua representação gráfica é dada por:
 
 + 
 
-  Sabemos que, de acordo com a equação de Chapman-Kolmogorov, conseguimos obter a matriz de transição de $n$ passos através da seguinte relação:
+  Sabemos que, de acordo com a equação de Chapman-Kolmogorov, conseguimos
+  obter a matriz de transição para um número genérico de $n+m$ passos através da seguinte relação:
 
   $
   p_(i j) (m+n) = sum_k p_(i k) (m) dot p_(k j) (n)\
@@ -160,9 +161,11 @@ sua representação gráfica é dada por:
 
 +
   Para demonstrar a convergência da matriz de transição ao longo das
-  iterações, calcularemos a soma dos quadrados das diferenças entre os
-  elementos das matrizes nos passos sucessivos da nossa amostra (por exemplo,
-  a diferença entre a matriz no passo 100 e a do passo 50).
+  iterações, calcularemos tanto a diferença entre as matrizes que se sucedem
+  (os resultados estão no jupyter notebook) quanto a soma dos quadrados das
+  diferenças entre os elementos das matrizes nos passos sucessivos da nossa
+  amostra (por exemplo, a diferença entre a
+  matriz no passo 100 e a do passo 50).
 
 
   #let example(body) = {
@@ -175,4 +178,83 @@ sua representação gráfica é dada por:
     sum_i sum_j (p_(i j) (100) - p_(i j) (50))^2\
     $
   ]
+
+  Ao plotar esses valores para os passos sucessivos, podemos observar que a
+  soma dos quadrados das diferenças converge para 0.
+
+  #figure(
+  image("convergence_plot.png", width: 300pt), 
+    caption: "Convergence plot")
+
+  Script em python utilizado para essa task:
+  ```python
+
+  from typing import List, Tuple
+
+
+  def calcular_diffs(Ps: List[np.ndarray]) -> Tuple[List[np.ndarray], List[float]]:
+    # Lista para armazenar as matrizes de diferenca
+    diffs = []
+    for i in range(1, len(Ps)):
+        diff = Ps[i] - Ps[i-1]
+        diffs.append(diff)
+
+    # Lista para armazenar a soma do quadrado dos elementos 
+    # das matrizes de diferenca
+    diffs_unitaria = [np.sum(mat**2) for mat in diffs]
+
+    return diffs, diffs_unitaria
+
+  diffs, udiffs = calcular_diffs(Ps)
+
+  # Definindo os xs para utilizar no plot
+  xs = np.arange(1, len(udiffs) + 1)
+  plt.figure(figsize=(10, 6)) 
+
+  plt.plot(xs, udiffs, 
+           marker='o',          
+           markersize=5,        
+           linestyle='-',       
+           linewidth=1,         
+           color="#152361",     
+           alpha=1.0)          
+
+  plt.title(r'Convergência: Soma dos Quadrados das Diferenças ($P_i - P_{i-1}$)', 
+            color="#000000")
+
+  plt.xlabel('Iteração ($i$)')
+  plt.ylabel('Soma dos Quadrados')
+  ```
+  
++ 
++ Para calcular o vetor de probabilidades estacionárias temos que resolver 
+  o seguinte sistema de equações:
+  
+  $
+  pi dot P = pi
+  $
+  
+  Onde:
+  - $pi$ é o vetor de probabilidades estacionárias, ou seja, o vetor que queremos encontrar.
+  - $P$ é a matriz de transição de um passo.
+
+  Ou seja, 
+
+  #let pis = ($pi_E$, $pi_R$, $pi_L$, $pi_A$)
+  #align(center)[
+    #math.vec(..pis) $dot$ #math.mat(..P) = #math.vec(..pis)
+  ]
+  
+  Além disso, por se tratarem de probabilidades, sabemos que 
+  $pi_E + pi_R + pi_L + pi_A = 1$
+
+  Resolvendo o sistema, encontramos:
+
+  
++ Para avaliar o quão rápido o sistema "esquece" as probabilidades iniciais e converge para as estacionárias, iremos utilizar como base a seguinte relação
+
+  $
+  p(n) = p(0) P(n) = p(0) P^n
+  $
+
 
