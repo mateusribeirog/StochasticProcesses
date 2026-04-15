@@ -345,6 +345,13 @@ sua representação gráfica é dada por:
   $ pi = [0.1751, quad 0.2003, quad 0.2271, quad 0.3975] $
 
   Com isso, vemos que o estado *A* é que possui maior probabilidade estacionária.
+
+  Para ilustração, podemos ver o seguinte gráfico:
+
+  #figure(
+    image("stationary_vector.png", width:350pt),
+    caption: "Vetor de probabilidades estacionárias"
+  )
   
 + 
   Para avaliar o quão rápido o sistema "esquece" as probabilidades iniciais e
@@ -455,6 +462,22 @@ for estado, p0 in estados_iniciais.items():
         
         print(f"n = {n:<3} | p(n) = [{pn[0]:.4f}, {pn[1]:.4f}, {pn[2]:.4f}, {pn[3]:.4f}]")
     print("-" * 45)
+
+# Plot do vetor estacionário
+estados = ['E', 'R', 'L', 'A']
+probabilidades = [0.1751, 0.2003, 0.2271, 0.3975]
+plt.figure(figsize=(8, 5))
+
+
+plt.bar(estados, probabilidades)
+
+
+plt.title('Distribuição de Probabilidades Estacionárias')
+plt.xlabel('Estados da Cadeia')
+plt.ylabel('Probabilidades')
+
+plt.tight_layout()
+plt.show()
 
 # Definindo o vetor de probabilidades iniciais descritos na questao
 p0 = np.array([0.3, 0.2, 0.1, 0.4])
