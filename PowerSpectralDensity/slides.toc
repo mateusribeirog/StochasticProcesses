@@ -1,0 +1,9 @@
+\babel@toc {british}{}\relax 
+\beamer@sectionintoc {1}{Modelagem do Sistema}{2}{0}{1}
+\beamer@sectionintoc {2}{Tarefa 1}{4}{0}{2}
+\beamer@sectionintoc {3}{Tarefa 2}{5}{0}{3}
+\beamer@sectionintoc {4}{Tarefa 3}{9}{0}{4}
+\beamer@sectionintoc {5}{Tarefa 4}{14}{0}{5}
+\beamer@sectionintoc {6}{Tarefa 5}{20}{0}{6}
+\beamer@sectionintoc {7}{Tarefa 6}{27}{0}{7}
+\beamer@sectionintoc {8}{Tarefa 7: Estimação de SNR por Sub-bandas}{28}{0}{8}
