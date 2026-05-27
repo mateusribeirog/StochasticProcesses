@@ -14,7 +14,7 @@
 \setbeamertemplate{navigation symbols}{} 
 \setbeamertemplate{headline}{}
 
-\title[Processo Estocásticos II]{Trabalho Análise Espectral de Potência}
+\title[Processos Estocásticos II]{Trabalho Análise Espectral de Potência}
 \author{Mateus Ribeiro Gomes}
 \date{\today}
 
@@ -87,18 +87,18 @@
             \textbf{Amplitudes (A):}
             \begin{itemize}
                 \item $0.5$: Interferência fraca.
-                \item $\sqrt{2}$: Equilíbrio energético.
-                \item $5.0$: Interferência severa.
-                \item $10.0$: Interferência extrema.
+                \item $\sqrt{2}$: Potência unitária.
+                \item $5.0$: Interferência considerável.
+                \item $10.0$: Interferência severa.
             \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
             \textbf{SNR (dB):}
             \begin{itemize}
-                \item $0$ dB: Degradação máxima.
-                \item $15$ dB: Condição nominal.
+                \item $0$ dB: Degradação grande.
+                \item $15$ dB: Condição ok.
                 \item $30$ dB: Alta qualidade.
-                \item $50$ dB: Teórico ideal.
+                \item $50$ dB: Ideal.
             \end{itemize}
         \end{column}
     \end{columns}
@@ -127,11 +127,14 @@
         \item A variância é calculada com base na seguinte equação $$SNR_{db} = 10 \cdot log_{10} \cdot (\frac{P_{signal}}{P_{noise}})$$ 
             Queremos achar o $P_{noise}$, portanto $$P_{noise} = \frac{P_{signal}}{10^{\frac{SNR}{10}}}$$
     \end{itemize}
+
+    
+    \begin{block}{Podemos observar que:}
     \begin{itemize}
-        \item Podemos ver que:
         \item $\sigma_w^2$ diminui com o aumento da SNR.
         \item O valor de $A$ causa flutuações pequenas, mas não altera a tendência da variância.
     \end{itemize}
+    \end{block}
 \end{frame}
 
 \begin{frame}{Tarefa 2: Matriz de Sinais no Tempo (N=1024)}
@@ -154,7 +157,10 @@
     Comparação entre dois métodos não-paramétricos:
     \vfill
     \begin{block}{1. Método do Periodograma}
-        Baseado na DFT direta do sinal. Possui \textbf{máxima resolução}, porém é um estimador \textbf{inconsistente} (variância não converge para zero com o aumento de $N$).
+        Estima a DEP pelo módulo ao quadrado da Transformada Discreta de
+        Fourier (DFT) normalizada por $N$, sendo $P_{x}(f) = \frac{1}{N}
+        \left| \sum_{n=0}^{N-1} x(n) e^{-j 2\pi f n} \right|^2$. Oferece máxima
+        resolução, mas sofre com alta variância.
     \end{block}
     \begin{block}{2. Método de Welch}
         Aplica médias de K periodogramas de segmentos. Reduz a variância ao custo da resolução espectral.
@@ -210,7 +216,9 @@
         \item $S_x(f) = \frac{1}{|1 - a_1 \cdot exp (-j 2 \pi f) - a_2 \cdot exp(-j 4 \pi f)|^2}$
     \end{itemize}
 
-    A comparação com as estimações foram feitas usando o \textbf{MSE}:
+    \vfill
+    A comparação com as estimações foram feitas usando o \textbf{MSE}: $$\frac{1}{N} \sum_{i=1}^{N} \Big( S_{r_{\text{teórico}}}(f_i) - S_{r_{\text{est}}}(f_i) \Big)^2$$
+
 \end{frame}
 
 \begin{frame}{Tarefa 4: Resultados de Validação Periodograma (N=1024)}
@@ -243,7 +251,7 @@
 \begin{frame}{Tarefa 4: Resultados do MSE}
     \begin{itemize}
         \item Menores erros observados para $A=0.5$ e SNR elevadas (15/30 dB).
-        \item O Método de Welch tende a apresentar MSE menor em regiões ruidosas devido à suavização.
+        \item O Método de Welch tende a apresentar MSE menor em regiões ruidosas em relação ao periodograma devido à suavização.
     \end{itemize}
 
     \begin{table}
@@ -438,18 +446,18 @@
     \begin{block}{Conclusões}
     \begin{itemize}
         \item \textbf{Precisão de $f_0$:} O Método de Welch é superior para
-            identificar a frequência de interferência em ambientes ruidosos
+            identificar a frequência de interferência principalmente em ambientes ruidosos
             (SNR = 0 dB).
         \item \textbf{Limites de Amplitude:} Para $A < \sqrt{2}$, o sistema
             apresenta dificuldade em isolar a frequência. Conforme $A$ aumenta,
             o pico torna-se evidente ($P \propto A^2$), mas a alta concentração
             de energia potencializa o espalhamento para as bandas vizinhas
             (\textit{Spectral Leakage}).
-        \item \textbf{Compromisso de Resolução ($L$):} Janelas curtas ($L =
+        \item \textbf{Resolução Mínima:} Janelas curtas ($L =
             34$) agravam estruturalmente o \textit{Spectral Leakage}, enquanto
-            janelas longas ($L = 512$) disparam a variância da estimativa.
+            janelas longas ($L = 512$) aumentam a variância da estimativa.
             Portanto, resoluções intermediárias (128 a 256) entregam o balanço
-            ideal entre precisão espectral e estabilidade visual.
+            ideal.
     \end{itemize}
     \end{block}
 \end{frame}
@@ -517,24 +525,22 @@
     A análise dos dados revela que a eficácia depende do nível do ruído AWGN do sistema:
     
     \begin{itemize}
-        \item \textbf{Robustez em Ambientes Ruidosos ($0\text{ dB}$):} Como o
-            ruído de fundo tem alta energia e se distribui uniformemente por
-            toda a banda, a medição na Zona Neutra é precisa. O estimador
+        \item \textbf{Robustez em Ambientes Ruidosos ($0\text{ dB}$):} Com o
+            ruído tendo alta energia, a medição na Zona Neutra é mais precisa. O estimador
             entrega valores coerentes (próximos a $-1.3\text{ dB}$).
         \item \textbf{Saturação em Ambientes com Menos Ruído ($15\text{ dB}$):} A 
             estimação travou em um limite superior com valor $\in (7, 8)$
             dB na maioria dos casos, tanto para interferências fortes ($A$ =
             10) quanto mais fracas ($A$ = $\sqrt{2}$).
-        \item \textbf{Possivel Causa:} Com o ruído em níveis muito baixos, a
-            energia da que vaza para a zona neutra (\textit{Spectral Leakage})
-            passa a ser contabilizada incorretamente.
+        \item \textbf{Possivel Causa:} Com o ruído em níveis mais baixos, o 
+            \textit{Spectral Leakage} passa a ser contabilizado incorretamente no cálculo.
     \end{itemize}
 \end{frame}
 
 % --- Slide Final ---
 \begin{frame}
     \centering
-    \Huge Obrigado! \\
+    \Huge Obrigado pela atenção! \\
     \vfill
     \Large Dúvidas?
 \end{frame}

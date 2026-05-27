@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  27 MAY 2026 01:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.9)  27 MAY 2026 02:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -909,91 +909,95 @@ Package pdftex.def Info: tarefa1_tempo.png  used on input line 78.
 ] [6
 
 ]
-<tarefa2_n1024.png, id=121, 713.3049pt x 569.4876pt>
+<tarefa2_n1024.png, id=137, 713.3049pt x 569.4876pt>
 File: tarefa2_n1024.png Graphic file (type png)
 <use tarefa2_n1024.png>
-Package pdftex.def Info: tarefa2_n1024.png  used on input line 142.
+Package pdftex.def Info: tarefa2_n1024.png  used on input line 145.
 (pdftex.def)             Requested size: 275.3573pt x 219.83995pt.
 [7
 
  <./tarefa2_n1024.png>]
-<tarefa2_n4096.png, id=131, 713.3049pt x 569.4876pt>
+<tarefa2_n4096.png, id=147, 713.3049pt x 569.4876pt>
 File: tarefa2_n4096.png Graphic file (type png)
 <use tarefa2_n4096.png>
-Package pdftex.def Info: tarefa2_n4096.png  used on input line 149.
+Package pdftex.def Info: tarefa2_n4096.png  used on input line 152.
 (pdftex.def)             Requested size: 275.3573pt x 219.83995pt.
 [8
 
- <./tarefa2_n4096.png>] [9
+ <./tarefa2_n4096.png>]
+Overfull \vbox (0.29716pt too high) detected at line 176
+ []
+
+[9
 
 ]
-<period_1024.png, id=175, 1076.1003pt x 711.8595pt>
+<period_1024.png, id=190, 1076.1003pt x 711.8595pt>
 File: period_1024.png Graphic file (type png)
 <use period_1024.png>
-Package pdftex.def Info: period_1024.png  used on input line 177.
+Package pdftex.def Info: period_1024.png  used on input line 183.
 (pdftex.def)             Requested size: 309.77368pt x 204.91327pt.
 [10
 
  <./period_1024.png>]
-<period_4096.png, id=184, 1076.1003pt x 711.8595pt>
+<period_4096.png, id=199, 1076.1003pt x 711.8595pt>
 File: period_4096.png Graphic file (type png)
 <use period_4096.png>
-Package pdftex.def Info: period_4096.png  used on input line 184.
+Package pdftex.def Info: period_4096.png  used on input line 190.
 (pdftex.def)             Requested size: 309.77368pt x 204.91327pt.
 [11
 
  <./period_4096.png>]
-<welch_1024.png, id=193, 1076.823pt x 711.8595pt>
+<welch_1024.png, id=209, 1076.823pt x 711.8595pt>
 File: welch_1024.png Graphic file (type png)
 <use welch_1024.png>
-Package pdftex.def Info: welch_1024.png  used on input line 191.
+Package pdftex.def Info: welch_1024.png  used on input line 197.
 (pdftex.def)             Requested size: 309.77368pt x 204.78293pt.
 [12
 
  <./welch_1024.png>]
-<welch_4096.png, id=203, 1076.823pt x 711.8595pt>
+<welch_4096.png, id=218, 1076.823pt x 711.8595pt>
 File: welch_4096.png Graphic file (type png)
 <use welch_4096.png>
-Package pdftex.def Info: welch_4096.png  used on input line 198.
+Package pdftex.def Info: welch_4096.png  used on input line 204.
 (pdftex.def)             Requested size: 309.77368pt x 204.78293pt.
 [13
 
  <./welch_4096.png>] [14
 
 ]
-<valid_period_1024.png, id=222, 1076.1003pt x 569.4876pt>
+<valid_period_1024.png, id=235, 1076.1003pt x 569.4876pt>
 File: valid_period_1024.png Graphic file (type png)
 <use valid_period_1024.png>
-Package pdftex.def Info: valid_period_1024.png  used on input line 221.
+Package pdftex.def Info: valid_period_1024.png  used on input line 229.
 (pdftex.def)             Requested size: 309.77368pt x 163.93062pt.
 [15
 
  <./valid_period_1024.png>]
-<valid_welch_1024.png, id=231, 1076.823pt x 569.4876pt>
+<valid_welch_1024.png, id=244, 1076.823pt x 569.4876pt>
 File: valid_welch_1024.png Graphic file (type png)
 <use valid_welch_1024.png>
-Package pdftex.def Info: valid_welch_1024.png  used on input line 227.
+Package pdftex.def Info: valid_welch_1024.png  used on input line 235.
 (pdftex.def)             Requested size: 309.77368pt x 163.82634pt.
 [16
 
  <./valid_welch_1024.png>]
-<valid_period_4096.png, id=240, 1076.1003pt x 569.4876pt>
+<valid_period_4096.png, id=253, 1076.1003pt x 569.4876pt>
 File: valid_period_4096.png Graphic file (type png)
 <use valid_period_4096.png>
-Package pdftex.def Info: valid_period_4096.png  used on input line 234.
+Package pdftex.def Info: valid_period_4096.png  used on input line 242.
 (pdftex.def)             Requested size: 309.77368pt x 163.93062pt.
 [17
 
  <./valid_period_4096.png>]
-<valid_welch_4086.png, id=249, 1076.823pt x 569.4876pt>
+<valid_welch_4086.png, id=262, 1076.823pt x 569.4876pt>
 File: valid_welch_4086.png Graphic file (type png)
 <use valid_welch_4086.png>
-Package pdftex.def Info: valid_welch_4086.png  used on input line 241.
+Package pdftex.def Info: valid_welch_4086.png  used on input line 249.
 (pdftex.def)             Requested size: 309.77368pt x 163.82634pt.
 [18
 
  <./valid_welch_4086.png>]
-Overfull \vbox (55.9306pt too high) detected at line 280
+Overfull \vbox (55.9306pt too high) detected at line 288
  []
 
 [19
@@ -1003,34 +1007,34 @@ Overfull \vbox (55.9306pt too high) detected at line 280
 ] [21
 
 ]
-<tarefa5_L_variation_1.png, id=306, 859.2903pt x 569.4876pt>
+<tarefa5_L_variation_1.png, id=319, 859.2903pt x 569.4876pt>
 File: tarefa5_L_variation_1.png Graphic file (type png)
 <use tarefa5_L_variation_1.png>
-Package pdftex.def Info: tarefa5_L_variation_1.png  used on input line 337.
+Package pdftex.def Info: tarefa5_L_variation_1.png  used on input line 345.
 (pdftex.def)             Requested size: 275.3573pt x 182.49174pt.
 [22
 
  <./tarefa5_L_variation_1.png>]
-<tarefa5_L_variation_2.png, id=315, 860.013pt x 569.4876pt>
+<tarefa5_L_variation_2.png, id=328, 860.013pt x 569.4876pt>
 File: tarefa5_L_variation_2.png Graphic file (type png)
 <use tarefa5_L_variation_2.png>
-Package pdftex.def Info: tarefa5_L_variation_2.png  used on input line 344.
+Package pdftex.def Info: tarefa5_L_variation_2.png  used on input line 352.
 (pdftex.def)             Requested size: 275.3573pt x 182.33534pt.
 [23
 
  <./tarefa5_L_variation_2.png>]
-<tarefa5_L_variation_3.png, id=324, 859.2903pt x 569.4876pt>
+<tarefa5_L_variation_3.png, id=337, 859.2903pt x 569.4876pt>
 File: tarefa5_L_variation_3.png Graphic file (type png)
 <use tarefa5_L_variation_3.png>
-Package pdftex.def Info: tarefa5_L_variation_3.png  used on input line 351.
+Package pdftex.def Info: tarefa5_L_variation_3.png  used on input line 359.
 (pdftex.def)             Requested size: 275.3573pt x 182.49174pt.
 [24
 
  <./tarefa5_L_variation_3.png>]
-<tarefa5_L_variation_4.png, id=333, 859.2903pt x 569.4876pt>
+<tarefa5_L_variation_4.png, id=346, 859.2903pt x 569.4876pt>
 File: tarefa5_L_variation_4.png Graphic file (type png)
 <use tarefa5_L_variation_4.png>
-Package pdftex.def Info: tarefa5_L_variation_4.png  used on input line 358.
+Package pdftex.def Info: tarefa5_L_variation_4.png  used on input line 366.
 (pdftex.def)             Requested size: 275.3573pt x 182.49174pt.
 [25
 
@@ -1065,10 +1069,10 @@ Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: D954FD5D4E80B12990ACA057C3580AEF;937.
  ) 
 Here is how much of TeX's memory you used:
- 26400 strings out of 469515
- 519549 string characters out of 5470808
- 902381 words of memory out of 5000000
- 54456 multiletter control sequences out of 15000+600000
+ 26406 strings out of 469515
+ 519814 string characters out of 5470808
+ 904382 words of memory out of 5000000
+ 54462 multiletter control sequences out of 15000+600000
  642054 words of font info for 91 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  128i,16n,123p,381b,931s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1087,10 +1091,10 @@ re/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist
 ublic/amsfonts/cm/cmssi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on slides.pdf (31 pages, 2476289 bytes).
+Output written on slides.pdf (31 pages, 2480354 bytes).
 PDF statistics:
- 494 PDF objects out of 1000 (max. 8388607)
- 313 compressed objects within 4 object streams
+ 506 PDF objects out of 1000 (max. 8388607)
+ 319 compressed objects within 4 object streams
  71 named destinations out of 1000 (max. 500000)
- 416 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 452 words of extra memory for PDF output out of 10000 (max. 10000000)
 
